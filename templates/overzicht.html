@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Overzicht
+{% endblock %}
+
+{% block overzicht%}
+    class="active"
+{% endblock %}
+
+{% block body %}
+    <div id="flash">
+        <div class="flash-container">
+            <img src="{{ url_for('static', filename = 'images/icon.png') }}">
+            <p>Welkom {{ username }}</p>
+        </div>
+    </div>
+    <div class="parent">
+        <div id="dots" class="light1 status{{ status[0] }}"></div>
+        <div id="dots" class="light2 status{{ status[1] }}"></div>
+        <div id="dots" class="light3 status{{ status[2] }}"></div>
+        <div id="dots" class="light4 status{{ status[3] }}"></div>
+        <div id="dots" class="light5 status{{ status[4] }}"></div>
+        <div id="dots" class="light6 status{{ status[5] }}"></div>
+        <div id="dots" class="light7 status{{ status[6] }}"></div>
+        <div id="dots" class="light8 status{{ status[7] }}"></div>
+        <img src="{{ url_for('static', filename = 'images/plattegrond.jpg') }}">
+    </div>
+
+
+{% endblock %}

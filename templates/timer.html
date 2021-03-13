@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Timer
+{% endblock %}
+
+{% block timer%}
+    class="active"
+{% endblock %}
+
+{% block body %}
+
+<form method="post" id="periode_form">
+    <div id="periode_head">
+        <label>Periode</label>
+    </div>
+    <div class="controls">
+    <div id="periode_licht">
+        <div class="label">
+            <label>Licht</label>
+        </div>
+        <select name="periode_licht" id="licht">
+            <option value="1">Wasplaats</option>
+            <option value="2">Badkamer</option>
+            <option value="3">Garage</option>
+            <option value="4">Keuken</option>
+            <option value="5">Inkom</option>
+            <option value="6">Living-tafel</option>
+            <option value="7">Living</option>
+        </select>
+    </div>
+    <div id="periode_start">
+        <div class="label">
+            <label>Start</label>
+        </div>
+        <input type="text" placeholder="Uur" name="uur_start_periode" required>
+        <input type="text" placeholder="Minuten" name="minuten_start_periode" required>
+    </div>
+    <div id="periode_einde">
+        <div class="label">
+            <label>Einde</label>
+        </div>
+        <input type="text" placeholder="Uur" name="uur_einde_periode" required>
+        <input type="text" placeholder="Minuten" name="minuten_einde_periode" required>
+    </div>
+    </div>
+    <input type="submit" value="opslaan periode" id="periode_id" name="button">
+<div class="error">
+          {% if error %}
+              {{ error }}
+          {% endif %}
+          </div>
+</form>
+
+<form method="post" id="timer_form">
+<div id="timer_head">
+    <label>Timer</label>
+</div>
+<div class="controls">
+<div id="timer_licht">
+    <div class="label">
+        <label>Licht</label>
+    </div>
+    <select name="timer_licht" id="licht">
+        <option value="1">Wasplaats</option>
+        <option value="2">Badkamer</option>
+        <option value="3">Garage</option>
+        <option value="4">Keuken</option>
+        <option value="5">Inkom</option>
+        <option value="6">Living-tafel</option>
+        <option value="7">Living</option>
+    </select>
+</div>
+<div id="timer_start">
+    <div class="label">
+        <label>Uit na</label>
+    </div>
+    <input type="text" placeholder="Uur" name="uur_start_timer" required>
+    <input type="text" placeholder="Minuten" name="minuten_start_timer" required>
+</div>
+</div>
+<input type="submit" value="opslaan timer" id="timer_id" name="button">
+<div class="error">
+          {% if error %}
+              {{ error }}
+          {% endif %}
+          </div>
+</form>
+
+{% endblock %}

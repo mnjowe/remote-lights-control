@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Lightz - Login</title>
+  <link rel="stylesheet" href="{{ url_for("static",filename="css/reset.css") }}">
+  <link rel="stylesheet" href="{{ url_for("static",filename="css/css.css") }}">
+</head>
+<body>
+<div class="bg"></div>
+  <div class="login">
+
+    <div class="login-screen">
+    <div class="login-buttons">
+        <button id="login-button" onclick="login()">Login</button>
+        <button id="register-button" onclick="register()">register</button>
+    </div>
+    <div id="login-page">
+      <h1 class="text">Welcome. <span>please login.</span></h1>
+
+      <form method="post" class="login-form">
+          <input type="text" name="username" placeholder="username" onBlur="if(this.value == '') this.value = ''" onFocus="if(this.value == 'username') this.value = ''" required>
+          <input type="password" name="password" placeholder="password" onBlur="if(this.value == '') this.value = ''" onFocus="if(this.value == 'password') this.value = ''" required>
+          <input type="submit" value="login" id="login_id" name="button">
+          <div class="error">
+          {% if error %}
+              {{ error }}
+          {% endif %}
+          </div>
+      </form>
+    </div>
+
+    <div id="register-page">
+    <h1 class="text">Welcome. <span>please register.</span></h1>
+
+      <form method="post" class="login-form">
+          <input type="text" name="username" placeholder="username" onBlur="if(this.value == '') this.value = ''" onFocus="if(this.value == 'username') this.value = ''" required>
+          <input type="password" name="password" placeholder="password" onBlur="if(this.value == '') this.value = ''" onFocus="if(this.value == 'password') this.value = ''" required>
+          <input type="password" name="code" placeholder="code" onBlur="if(this.value == '') this.value = ''" onFocus="if(this.value == 'code') this.value = ''" required>
+          <input type="submit" value="register" id="register_id" name="button">
+          <div class="error">
+          {% if error %}
+              {{ error }}
+          {% endif %}
+          </div>
+      </form>
+        </div>
+  </div>
+  </div>
+<script src="{{ url_for("static",filename="js/scripts.js") }}"></script>
+</body>
+</html>
